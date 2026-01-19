@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GINGA - Movimento estruturante de inovação governamental brasileiro">
+    <meta name="keywords" content="GINGA, inovação, governo, Brasil, SEGES, DINOV">
+    <title>GINGA - Inovação Governamental</title>
+
+    <!-- Google Fonts - Host Grotesk (Identidade Visual Oficial GINGA) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="pagina_modelo_ginga.css">
+</head>
+
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#oque-e" class="skip-link" data-pt="Pular para o conteúdo" data-en="Skip to content"
+        data-es="Saltar al contenido">Pular para o conteúdo</a>
+
+    <!-- Language Selector -->
+    <div class="language-selector" role="group" aria-label="Selecionar idioma">
+        <button class="lang-btn active" data-lang="pt" onclick="changeLanguage('pt')" aria-label="Português"
+            aria-current="true">PT</button>
+        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="es" onclick="changeLanguage('es')" aria-label="Español">ES</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo/dimensoes/Símbolo GINGA.svg" alt="GINGA" class="logo-symbol">
+                <span class="logo-text">GINGA</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#oque-e" data-pt="O que é" data-en="What is" data-es="Qué es">O que é</a></li>
+                <li><a href="#manifesto" data-pt="Manifesto" data-en="Manifesto" data-es="Manifiesto">Manifesto</a></li>
+                <li><a href="#dimensoes" data-pt="Dimensões" data-en="Dimensions" data-es="Dimensiones">Dimensões</a>
+                </li>
+                <li><a href="#equipe" data-pt="Equipe" data-en="Team" data-es="Equipo">Equipe</a></li>
+                <li><a href="#recursos" data-pt="Recursos" data-en="Resources" data-es="Recursos">Recursos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Floating GINGA Mini-Nav (appears on scroll) -->
+    <div class="ginga-floatnav" id="floatnav" aria-label="Navegação rápida por dimensões">
+        <button class="floatnav-letter g" onclick="scrollToSection('governanca')" title="Governança"
+            aria-label="Ir para Governança">G</button>
+        <button class="floatnav-letter i" onclick="scrollToSection('incentivos')" title="Incentivos"
+            aria-label="Ir para Incentivos">I</button>
+        <button class="floatnav-letter n" onclick="scrollToSection('normas')" title="Normas"
+            aria-label="Ir para Normas">N</button>
+        <button class="floatnav-letter g2" onclick="scrollToSection('gestao')" title="Gestão"
+            aria-label="Ir para Gestão">G</button>
+        <button class="floatnav-letter a" onclick="scrollToSection('ambiencia')" title="Ambiência"
+            aria-label="Ir para Ambiência">A</button>
+    </div>
+
+    <!-- Hero Section - O que é -->
+    <section id="oque-e" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="text-slider">
+                        <!-- Slide 1: Definição -->
+                        <div class="text-slide active">
+                            <h1 class="hero-title" data-pt="O que é a GINGA?" data-en="What is GINGA?"
+                                data-es="¿Qué es GINGA?">
+                                O que é a GINGA?</h1>
+                            <p class="hero-description"
+                                data-pt="A GINGA constitui-se como movimento estruturante que organiza e direciona o ecossistema de inovação governamental brasileiro. Expressa a brasilidade na inovação, enraizada na diversidade do país, reconhecendo que inovar no Brasil exige considerar contextos específicos, desigualdades estruturais e histórias subalternizadas."
+                                data-en="GINGA is a structuring movement that organizes and directs the Brazilian government innovation ecosystem. It expresses Brazilian identity in innovation, rooted in the country's diversity, recognizing that innovating in Brazil requires considering specific contexts, structural inequalities and subalternized histories."
+                                data-es="GINGA se constituye como movimiento estructurante que organiza y dirige el ecosistema de innovación gubernamental brasileño. Expresa la brasilidad en la innovación, enraizada en la diversidad del país, reconociendo que innovar en Brasil exige considerar contextos específicos, desigualdades estructurales e historias subalternizadas.">
+                                A GINGA constitui-se como movimento estruturante que organiza e direciona o ecossistema
+                                de
+                                inovação governamental brasileiro. Expressa a brasilidade na inovação, enraizada na
+                                diversidade
+                                do país, reconhecendo que inovar no Brasil exige considerar contextos específicos,
+                                desigualdades
+                                estruturais e histórias subalternizadas.
+                            </p>
+                        </div>
+
+                        <!-- Slide 2: Citação -->
+                        <div class="text-slide">
+                            <h1 class="hero-title" data-pt="Origem e Significado" data-en="Origin and Meaning"
+                                data-es="Origen y Significado">
+                                Origem e Significado</h1>
+                            <blockquote class="hero-quote">
+                                <p>"A escolha do acrônimo e da palavra GINGA é uma excelente oportunidade de afirmação
+                                    de conceito (ou
+                                    epistêmica) sobre a origem e contribuição da diversidade racial para o ecossistema
+                                    de inovação do
+                                    governo. Ginga nasce de kujinga do idioma kimbundu vindo de Angola."</p>
+                                <footer>
+                                    <cite>
+                                        <strong>Magali Dantas</strong><br>
+                                        Servidora pública e especialista em relações etnico-raciais
+                                    </cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <!-- Slider Dots -->
+                    <div class="slider-dots" role="tablist" aria-label="Navegação de slides">
+                        <button class="slider-dot active" data-slide="0" role="tab" aria-selected="true"
+                            aria-label="Slide 1"></button>
+                        <button class="slider-dot" data-slide="1" role="tab" aria-selected="false"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <div class="ginga-letters-hero">
+                        <button type="button" class="ginga-letter g" data-tooltip-pt="Governança"
+                            data-tooltip-en="Governance" data-tooltip-es="Gobernanza" title="Governança"
+                            onclick="scrollToSection('governanca')" data-dimension="governanca" aria-label="Governança">
+                            <svg class="letter-text letter-vector" viewBox="195 30 46 80"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M235.28,103.77h-24.1c-19.51,0-35.22-15.8-35.22-35.31s15.71-35.21,35.22-35.21h24.1c2.63,0,4.78,2.15,4.78,4.78v8.1c0,2.63-2.15,4.78-4.78,4.78h-41.75c-1.75,0-3.12,1.46-3.12,3.22,0,.68.19,1.37.58,1.85l22.24,39.8c.49.98,1.56,1.56,2.73,1.56,1.76,0,3.32-1.46,3.32-3.22v-24c0-2.63,2.15-4.78,4.78-4.78h11.22c2.63,0,4.78,2.15,4.78,4.78v28.78c0,2.63-2.15,4.88-4.78,4.88Z" />
+                            </svg>
+                            <img src="logo/dimensoes/1. Governança.svg" alt="Governança" class="letter-logo">
+                        </button>
+                        <button type="button" class="ginga-letter i" data-tooltip-pt="Incentivos"
+                            data-tooltip-en="Incentives" data-tooltip-es="Incentivos" title="Incentivos"
+                            onclick="scrollToSection('incentivos')" data-dimension="incentivos" aria-label="Incentivos">
+                            <svg class="letter-text letter-vector" viewBox="254 15 32 95"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M278.13,102.42h-16.75c-3.05,0-5.54-2.49-5.54-5.55v-46.51c0-3.05,2.49-5.55,5.54-5.55h16.75c3.05,0,5.54,2.49,5.54,5.55v46.51c0,3.06-2.49,5.55-5.54,5.55ZM272.47,39.28c-6.11,0-11.09-5.09-11.09-11.2s4.98-11.09,11.09-11.09,11.2,4.98,11.2,11.09-5.09,11.2-11.2,11.2Z" />
+                            </svg>
+                            <img src="logo/dimensoes/2. Incentivos.svg" alt="Incentivos" class="letter-logo">
+                        </button>
+                        <button type="button" class="ginga-letter n" data-tooltip-pt="Normas" data-tooltip-en="Norms"
+                            data-tooltip-es="Normas" title="Normas" onclick="scrollToSection('normas')"
+                            data-dimension="normas" aria-label="Normas">
+                            <svg class="letter-text letter-vector" viewBox="320 30 52 80"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M365.59,98.99c0,2.64-2.15,4.78-4.78,4.78h-11.22c-2.63,0-4.78-2.15-4.78-4.78v-31.31c0-1.76-1.46-3.22-3.22-3.22h-26.44c-1.75,0-3.22,1.46-3.22,3.22,0,.59.19,1.27.49,1.76l15.71,27.12c.39.68.68,1.56.68,2.44,0,2.64-2.24,4.78-4.88,4.78h-19.22c-2.63,0-4.78-2.15-4.78-4.78v-62.53c0-2.63,2.15-4.78,4.78-4.78.88,0,1.66.19,2.34.58l30.43,17.56c3.02,1.75,3.61,1.85,4.1,1.85,1.75,0,3.22-1.46,3.22-3.22v-10.44c0-2.64,2.15-4.78,4.78-4.78h11.22c2.63,0,4.78,2.15,4.78,4.78v60.97Z" />
+                            </svg>
+                            <img src="logo/dimensoes/3. Normas.svg" alt="Normas" class="letter-logo">
+                        </button>
+                        <button type="button" class="ginga-letter g" data-tooltip-pt="Gestão de Capacidades"
+                            data-tooltip-en="Capacity Management" data-tooltip-es="Gestión de Capacidades"
+                            title="Gestão de Capacidades" onclick="scrollToSection('gestao')" data-dimension="gestao"
+                            aria-label="Gestão de Capacidades">
+                            <svg class="letter-text letter-vector" viewBox="395 30 46 80"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M435.62,103.77h-24.1c-19.51,0-35.21-15.8-35.21-35.31s15.71-35.21,35.21-35.21h24.1c2.64,0,4.78,2.15,4.78,4.78v8.1c0,2.63-2.15,4.78-4.78,4.78h-41.75c-1.76,0-3.12,1.46-3.12,3.22,0,.68.19,1.37.59,1.85l22.24,39.8c.48.98,1.56,1.56,2.73,1.56,1.75,0,3.31-1.46,3.31-3.22v-24c0-2.63,2.15-4.78,4.78-4.78h11.22c2.64,0,4.78,2.15,4.78,4.78v28.78c0,2.63-2.15,4.88-4.78,4.88Z" />
+                            </svg>
+                            <img src="logo/dimensoes/4. Gestão de Capacidades.svg" alt="Gestão de Capacidades"
+                                class="letter-logo">
+                        </button>
+                        <button type="button" class="ginga-letter a" data-tooltip-pt="Ambiência"
+                            data-tooltip-en="Ambiance" data-tooltip-es="Ambiente" title="Ambiência"
+                            onclick="scrollToSection('ambiencia')" data-dimension="ambiencia" aria-label="Ambiência">
+                            <svg class="letter-text letter-vector" viewBox="442 30 65 80"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M500.98,103.77c-2.64,0-4.78-2.15-4.78-4.78v-36.97c0-1.76-1.37-3.22-3.12-3.22-.58,0-1.07.1-1.56.39l-22.54,12.88c-.97.59-1.56,1.66-1.56,2.44,0,.68.1,1.37.39,1.95l11.71,20.09c.39.68.68,1.46.68,2.44,0,2.64-2.15,4.78-4.78,4.78h-24.88c-2.63,0-4.78-2.15-4.78-4.78,0-.97.19-1.75.58-2.44l36.09-62.53c.78-1.46,2.34-2.34,4.1-2.34s3.42.88,4.2,2.34l36.09,62.43c.39.68.59,1.56.59,2.54,0,2.64-2.15,4.78-4.78,4.78h-21.65Z" />
+                            </svg>
+                            <img src="logo/dimensoes/5. Ambiência.svg" alt="Ambiência" class="letter-logo">
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="logo/dimensoes/Símbolo GINGA.svg" alt="Símbolo GINGA" class="symbol-large">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="manifesto-section">
+        <div class="container">
+            <h2 class="section-title" data-pt="Manifesto GINGA" data-en="GINGA Manifesto" data-es="Manifiesto GINGA">
+                Manifesto GINGA</h2>
+
+            <!-- Conteúdo do Manifesto -->
+            <div class="manifesto-texto">
+                <div class="manifesto-intro">
+                    <h3 data-pt="Por uma Inovação Brasileira" data-en="For a Brazilian Innovation"
+                        data-es="Por una Innovación Brasileña">
+                        Por uma Inovação Brasileira
+                    </h3>
+                    <p data-pt="A GINGA não é apenas um framework: é um manifesto vivo pela transformação da gestão pública brasileira através da inovação. É o reconhecimento de que inovar no Brasil exige respeitar nossa diversidade, enfrentar nossas desigualdades e valorizar nossas histórias."
+                        data-en="GINGA is not just a framework: it is a living manifesto for the transformation of Brazilian public management through innovation. It is the recognition that innovating in Brazil requires respecting our diversity, facing our inequalities and valuing our histories."
+                        data-es="GINGA no es solo un framework: es un manifiesto vivo por la transformación de la gestión pública brasileña a través de la innovación. Es el reconocimiento de que innovar en Brasil exige respetar nuestra diversidad, enfrentar nuestras desigualdades y valorar nuestras historias.">
+                        A GINGA não é apenas um framework: é um manifesto vivo pela transformação da gestão pública
+                        brasileira através da inovação. É o reconhecimento de que inovar no Brasil exige respeitar nossa
+                        diversidade, enfrentar nossas desigualdades e valorizar nossas histórias.
+                    </p>
+                </div>
+
+                <div class="manifesto-principios">
+                    <h4 data-pt="Nossos Princípios" data-en="Our Principles" data-es="Nuestros Principios">
+                        Nossos Princípios
+                    </h4>
+
+                    <div class="principio-item">
+                        <h5 data-pt="1. Inovação com Brasilidade" data-en="1. Innovation with Brazilian Identity"
+                            data-es="1. Innovación con Brasilidad">
+                            1. Inovação com Brasilidade
+                        </h5>
+                        <p data-pt="Expressamos a identidade brasileira na inovação governamental. Não importamos modelos prontos: criamos soluções enraizadas em nossa realidade, considerando contextos específicos, desigualdades estruturais e histórias subalternizadas."
+                            data-en="We express Brazilian identity in government innovation. We do not import ready-made models: we create solutions rooted in our reality, considering specific contexts, structural inequalities and subalternized histories."
+                            data-es="Expresamos la identidad brasileña en la innovación gubernamental. No importamos modelos listos: creamos soluciones enraizadas en nuestra realidad, considerando contextos específicos, desigualdades estructurales e historias subalternizadas.">
+                            Expressamos a identidade brasileira na inovação governamental. Não importamos modelos
+                            prontos: criamos soluções enraizadas em nossa realidade, considerando contextos específicos,
+                            desigualdades estruturais e histórias subalternizadas.
+                        </p>
+                    </div>
+
+                    <div class="principio-item">
+                        <h5 data-pt="2. Movimento, Não Moldura" data-en="2. Movement, Not Framework"
+                            data-es="2. Movimiento, No Marco">
+                            2. Movimento, Não Moldura
+                        </h5>
+                        <p data-pt="A GINGA é um movimento estruturante que se adapta, evolui e responde aos desafios reais. Não engessamos a inovação em modelos rígidos. Criamos um ecossistema vivo que se move com agilidade, criatividade e leveza."
+                            data-en="GINGA is a structuring movement that adapts, evolves and responds to real challenges. We do not rigidify innovation in rigid models. We create a living ecosystem that moves with agility, creativity and lightness."
+                            data-es="GINGA es un movimiento estructurante que se adapta, evoluciona y responde a los desafíos reales. No encorsetamos la innovación en modelos rígidos. Creamos un ecosistema vivo que se mueve con agilidad, creatividad y ligereza.">
+                            A GINGA é um movimento estruturante que se adapta, evolui e responde aos desafios reais. Não
+                            engessamos a inovação em modelos rígidos. Criamos um ecossistema vivo que se move com
+                            agilidade, criatividade e leveza.
+                        </p>
+                    </div>
+
+                    <div class="principio-item">
+                        <h5 data-pt="3. Cinco Dimensões Integradas" data-en="3. Five Integrated Dimensions"
+                            data-es="3. Cinco Dimensiones Integradas">
+                            3. Cinco Dimensões Integradas
+                        </h5>
+                        <p data-pt="A inovação governamental não acontece no vazio. Estruturamos nosso ecossistema em cinco dimensões interdependentes: Governança, Incentivos, Normas, Gestão de Capacidades e Ambiência. Juntas, elas criam as condições para que a inovação floresça."
+                            data-en="Government innovation does not happen in a vacuum. We structure our ecosystem in five interdependent dimensions: Governance, Incentives, Norms, Capacity Management and Ambiance. Together, they create the conditions for innovation to flourish."
+                            data-es="La innovación gubernamental no ocurre en el vacío. Estructuramos nuestro ecosistema en cinco dimensiones interdependientes: Gobernanza, Incentivos, Normas, Gestión de Capacidades y Ambiente. Juntas, crean las condiciones para que la innovación florezca.">
+                            A inovação governamental não acontece no vazio. Estruturamos nosso ecossistema em cinco
+                            dimensões interdependentes: Governança, Incentivos, Normas, Gestão de Capacidades e
+                            Ambiência. Juntas, elas criam as condições para que a inovação floresça.
+                        </p>
+                    </div>
+
+                    <div class="principio-item">
+                        <h5 data-pt="4. Segurança Psicológica e Confiança" data-en="4. Psychological Safety and Trust"
+                            data-es="4. Seguridad Psicológica y Confianza">
+                            4. Segurança Psicológica e Confiança
+                        </h5>
+                        <p data-pt="Substituímos modelos de comando e controle por ambientes livres de assédio, pautados em relações de confiança. Criamos espaços onde o questionamento propositivo é bem-vindo, onde a experimentação é protegida, onde o erro é parte do aprendizado."
+                            data-en="We replace command and control models with harassment-free environments based on trust relationships. We create spaces where positive questioning is welcome, where experimentation is protected, where error is part of learning."
+                            data-es="Sustituimos modelos de comando y control por ambientes libres de acoso, pautados en relaciones de confianza. Creamos espacios donde el cuestionamiento propositivo es bienvenido, donde la experimentación es protegida, donde el error es parte del aprendizaje.">
+                            Substituímos modelos de comando e controle por ambientes livres de assédio, pautados em
+                            relações de confiança. Criamos espaços onde o questionamento propositivo é bem-vindo, onde a
+                            experimentação é protegida, onde o erro é parte do aprendizado.
+                        </p>
+                    </div>
+
+                    <div class="principio-item">
+                        <h5 data-pt="5. Regulação que Libera, Não que Prende"
+                            data-en="5. Regulation that Frees, Not that Binds"
+                            data-es="5. Regulación que Libera, No que Ata">
+                            5. Regulação que Libera, Não que Prende
+                        </h5>
+                        <p data-pt="Normas não engessam a inovação quando são bem formuladas. Criamos regulação adaptativa, ancorada em problemas reais, que organiza, dá previsibilidade e protege a experimentação. Evitamos o excesso de regras que ninguém pediu e poucos cumprem."
+                            data-en="Norms do not stifle innovation when they are well formulated. We create adaptive regulation, anchored in real problems, that organizes, provides predictability and protects experimentation. We avoid the excess of rules that no one asked for and few comply with."
+                            data-es="Las normas no entorpecen la innovación cuando están bien formuladas. Creamos regulación adaptativa, anclada en problemas reales, que organiza, da previsibilidad y protege la experimentación. Evitamos el exceso de reglas que nadie pidió y pocos cumplen.">
+                            Normas não engessam a inovação quando são bem formuladas. Criamos regulação adaptativa,
+                            ancorada em problemas reais, que organiza, dá previsibilidade e protege a experimentação.
+                            Evitamos o excesso de regras que ninguém pediu e poucos cumprem.
+                        </p>
+                    </div>
+
+                    <div class="principio-item">
+                        <h5 data-pt="6. Evidências sem Rankings" data-en="6. Evidence without Rankings"
+                            data-es="6. Evidencias sin Rankings">
+                            6. Evidências sem Rankings
+                        </h5>
+                        <p data-pt="Mensuramos e desenvolvemos competências institucionais para aprender e melhorar continuamente. Mas não geramos competição predatória nem rankings excludentes. Nos pautamos em evidências para escolhas melhores, cooperação mais forte e decisões livres de vieses."
+                            data-en="We measure and develop institutional competencies to learn and continuously improve. But we do not generate predatory competition or exclusionary rankings. We base ourselves on evidence for better choices, stronger cooperation and bias-free decisions."
+                            data-es="Medimos y desarrollamos competencias institucionales para aprender y mejorar continuamente. Pero no generamos competencia predatoria ni rankings excluyentes. Nos basamos en evidencias para mejores elecciones, cooperación más fuerte y decisiones libres de sesgos.">
+                            Mensuramos e desenvolvemos competências institucionais para aprender e melhorar
+                            continuamente. Mas não geramos competição predatória nem rankings excludentes. Nos pautamos
+                            em evidências para escolhas melhores, cooperação mais forte e decisões livres de vieses.
+                        </p>
+                    </div>
+
+                    <div class="principio-item">
+                        <h5 data-pt="7. Centrado no Cidadão" data-en="7. Citizen-Centered"
+                            data-es="7. Centrado en el Ciudadano">
+                            7. Centrado no Cidadão
+                        </h5>
+                        <p data-pt="Todos os esforços convergem para um propósito: servir melhor ao cidadão e à cidadã. Criamos novos arranjos, quebramos velhas práticas ineficazes, abrimos espaço para o novo - sempre com o olhar voltado para quem mais importa."
+                            data-en="All efforts converge to one purpose: to better serve the citizen. We create new arrangements, break old ineffective practices, open space for the new - always with our eyes on those who matter most."
+                            data-es="Todos los esfuerzos convergen hacia un propósito: servir mejor al ciudadano y la ciudadana. Creamos nuevos arreglos, rompemos viejas prácticas ineficaces, abrimos espacio para lo nuevo - siempre con la mirada puesta en quienes más importan.">
+                            Todos os esforços convergem para um propósito: servir melhor ao cidadão e à cidadã. Criamos
+                            novos arranjos, quebramos velhas práticas ineficazes, abrimos espaço para o novo - sempre
+                            com o olhar voltado para quem mais importa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="manifesto-chamada">
+                    <h4 data-pt="Junte-se ao Movimento" data-en="Join the Movement" data-es="Únase al Movimiento">
+                        Junte-se ao Movimento
+                    </h4>
+                    <p data-pt="A GINGA é um convite para todos que acreditam que é possível transformar a gestão pública brasileira. É um chamado para jogar junto, esquivar com criatividade, experimentar com coragem e construir, coletivamente, um setor público mais inovador, mais humano e mais efetivo."
+                        data-en="GINGA is an invitation to all who believe it is possible to transform Brazilian public management. It is a call to play together, dodge with creativity, experiment with courage and collectively build a more innovative, more human and more effective public sector."
+                        data-es="GINGA es una invitación para todos los que creen que es posible transformar la gestión pública brasileña. Es un llamado para jugar juntos, esquivar con creatividad, experimentar con coraje y construir, colectivamente, un sector público más innovador, más humano y más efectivo.">
+                        A GINGA é um convite para todos que acreditam que é possível transformar a gestão pública
+                        brasileira. É um chamado para jogar junto, esquivar com criatividade, experimentar com coragem e
+                        construir, coletivamente, um setor público mais inovador, mais humano e mais efetivo.
+                    </p>
+                    <p class="manifesto-assinatura" data-pt="DINOV/SEGES - Movimento GINGA"
+                        data-en="DINOV/SEGES - GINGA Movement" data-es="DINOV/SEGES - Movimiento GINGA">
+                        <strong>DINOV/SEGES - Movimento GINGA</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card com link para PDF -->
+            <div class="manifesto-content">
+                <div class="manifesto-card">
+                    <div class="manifesto-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3 data-pt="Baixe o Manifesto em PDF" data-en="Download the Manifesto in PDF"
+                        data-es="Descargue el Manifiesto en PDF">Baixe o Manifesto em PDF</h3>
+                    <p data-pt="Faça o download da versão completa do manifesto em PDF para compartilhar e consultar offline."
+                        data-en="Download the complete version of the manifesto in PDF to share and consult offline."
+                        data-es="Descargue la versión completa del manifiesto en PDF para compartir y consultar sin conexión.">
+                        Faça o download da versão completa do manifesto em PDF para compartilhar e consultar offline.
+                    </p>
+                    <a href="manifesto GINGA.pdf" class="btn-primary" target="_blank" data-pt="Abrir Manifesto (PDF)"
+                        data-en="Open Manifesto (PDF)" data-es="Abrir Manifiesto (PDF)">
+                        Abrir Manifesto (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dimensões Section -->
+    <section id="dimensoes" class="dimensoes-section">
+        <div class="container">
+            <h2 class="section-title" data-pt="Dimensões" data-en="Dimensions" data-es="Dimensiones">Dimensões</h2>
+            <p class="section-subtitle"
+                data-pt="As cinco dimensões estruturantes do ecossistema de inovação governamental"
+                data-en="The five structuring dimensions of the government innovation ecosystem"
+                data-es="Las cinco dimensiones estructurantes del ecosistema de innovación gubernamental">
+                As cinco dimensões estruturantes do ecossistema de inovação governamental
+            </p>
+
+            <!-- Pandeiro GINGA - Visualização Circular -->
+            <div class="pandeiro-wrapper">
+                <!-- Aro do Pandeiro (círculo externo decorativo) -->
+                <div class="pandeiro-aro"></div>
+
+                <!-- Pele do Pandeiro (centro com símbolo) -->
+                <div class="pandeiro-pele">
+                    <img src="logo/dimensoes/Símbolo GINGA.svg" alt="GINGA" class="pandeiro-symbol">
+                    <span class="pandeiro-label">GINGA</span>
+                </div>
+
+                <!-- Platinelas (as 5 dimensões como soalhas do pandeiro) -->
+                <button class="platinela platinela-g"
+                    onclick="scrollToSection('governanca'); expandDimension('governanca')" aria-label="Governança">
+                    <span class="platinela-letter">G</span>
+                    <span class="platinela-name">Governança</span>
+                </button>
+
+                <button class="platinela platinela-i"
+                    onclick="scrollToSection('incentivos'); expandDimension('incentivos')" aria-label="Incentivos">
+                    <span class="platinela-letter">I</span>
+                    <span class="platinela-name">Incentivos</span>
+                </button>
+
+                <button class="platinela platinela-n" onclick="scrollToSection('normas'); expandDimension('normas')"
+                    aria-label="Normas">
+                    <span class="platinela-letter">N</span>
+                    <span class="platinela-name">Normas</span>
+                </button>
+
+                <button class="platinela platinela-g2" onclick="scrollToSection('gestao'); expandDimension('gestao')"
+                    aria-label="Gestão de Capacidades">
+                    <span class="platinela-letter">G</span>
+                    <span class="platinela-name">Gestão</span>
+                </button>
+
+                <button class="platinela platinela-a"
+                    onclick="scrollToSection('ambiencia'); expandDimension('ambiencia')" aria-label="Ambiência">
+                    <span class="platinela-letter">A</span>
+                    <span class="platinela-name">Ambiência</span>
+                </button>
+            </div>
+
+            <!-- Cartões de Detalhe (expandíveis) -->
+
+            <!-- Dimensão 1: Governança -->
+            <div class="dimensao-item" id="governanca">
+                <div class="dimensao-header">
+                    <img src="logo/dimensoes/1. Governança.svg" alt="Governança" class="dimensao-icon">
+                    <div class="dimensao-title-group">
+                        <div class="dimensao-letter g">G</div>
+                        <h3 class="dimensao-name" data-pt="Governança" data-en="Governance" data-es="Gobernanza">
+                            Governança</h3>
+                    </div>
+                </div>
+                <p class="dimensao-description"
+                    data-pt="Coordenação estratégica, clareza de papéis e visão sistêmica. Significa criar espaços coletivos, onde se jogam os corpos e também as energias. Organiza o espaço de atuação e de cooperação, com papéis diferentes, mas interdependentes, em que os agentes jogam juntos, esquivam com criatividade e leveza, lidando com riscos, controles e incertezas, sem paralisar."
+                    data-en="Strategic coordination, role clarity and systemic vision. It means creating collective spaces where bodies and energies are played. It organizes the space of action and cooperation, with different but interdependent roles, where agents play together, dodge with creativity and lightness, dealing with risks, controls and uncertainties, without paralyzing."
+                    data-es="Coordinación estratégica, claridad de roles y visión sistémica. Significa crear espacios colectivos, donde se juegan los cuerpos y también las energías. Organiza el espacio de actuación y de cooperación, con roles diferentes, pero interdependientes, en que los agentes juegan juntos, esquivan con creatividad y ligereza, lidando con riesgos, controles e incertidumbres, sin paralizar.">
+                    Coordenação estratégica, clareza de papéis e visão sistêmica. Significa criar espaços coletivos,
+                    onde se jogam os corpos e também as energias. Organiza o espaço de atuação e de cooperação, com
+                    papéis diferentes, mas interdependentes, em que os agentes jogam juntos, esquivam com criatividade e
+                    leveza, lidando com riscos, controles e incertezas, sem paralisar.
+                </p>
+                <div class="dimensao-elements">
+                    <h4 data-pt="Elementos:" data-en="Elements:" data-es="Elementos:">Elementos:</h4>
+                    <ul data-pt>
+                        <li>Instância(s) de Coordenação</li>
+                        <li>Fórum Interministerial/Interfederativa</li>
+                        <li>Laboratórios, Unidades, Hubs</li>
+                    </ul>
+                    <ul data-en style="display: none;">
+                        <li>Coordination Instance(s)</li>
+                        <li>Interministerial/Interfederal Forum</li>
+                        <li>Laboratories, Units, Hubs</li>
+                    </ul>
+                    <ul data-es style="display: none;">
+                        <li>Instancia(s) de Coordinación</li>
+                        <li>Foro Interministerial/Interfederal</li>
+                        <li>Laboratorios, Unidades, Hubs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dimensão 2: Incentivos -->
+            <div class="dimensao-item" id="incentivos">
+                <div class="dimensao-header">
+                    <img src="logo/dimensoes/2. Incentivos.svg" alt="Incentivos" class="dimensao-icon">
+                    <div class="dimensao-title-group">
+                        <div class="dimensao-letter i">I</div>
+                        <h3 class="dimensao-name" data-pt="Incentivos" data-en="Incentives" data-es="Incentivos">
+                            Incentivos</h3>
+                    </div>
+                </div>
+                <p class="dimensao-description"
+                    data-pt="Recursos materiais, humanos, organizacionais, simbólicos e comportamentais que despertam a vontade e a coragem de inovar. São a energia que mantém o jogo vivo, ativando a motivação para experimentar e persistir."
+                    data-en="Material, human, organizational, symbolic and behavioral resources that awaken the will and courage to innovate. They are the energy that keeps the game alive, activating motivation to experiment and persist."
+                    data-es="Recursos materiales, humanos, organizacionales, simbólicos y comportamentales que despiertan la voluntad y el coraje de innovar. Son la energía que mantiene el juego vivo, activando la motivación para experimentar y persistir.">
+                    Recursos materiais, humanos, organizacionais, simbólicos e comportamentais que despertam a vontade e
+                    a coragem de inovar. São a energia que mantém o jogo vivo, ativando a motivação para experimentar e
+                    persistir.
+                </p>
+                <div class="dimensao-elements">
+                    <h4 data-pt="Elementos:" data-en="Elements:" data-es="Elementos:">Elementos:</h4>
+                    <ul data-pt>
+                        <li>Fundos de fomento à inovação em governo</li>
+                        <li>Pessoas e gratificações vocacionadas a áreas de inovação</li>
+                        <li>Subvenção/apoio a projetos (G2G, B2G, Inovação cidadã)</li>
+                        <li>Reconhecimento a órgãos e pessoas</li>
+                        <li>Nudges e insights comportamentais</li>
+                        <li>Apoio a órgãos em eixos estratégicos</li>
+                    </ul>
+                    <ul data-en style="display: none;">
+                        <li>Government innovation funding</li>
+                        <li>People and rewards dedicated to innovation areas</li>
+                        <li>Subsidy/support for projects (G2G, B2G, Citizen innovation)</li>
+                        <li>Recognition to agencies and people</li>
+                        <li>Nudges and behavioral insights</li>
+                        <li>Support to agencies in strategic axes</li>
+                    </ul>
+                    <ul data-es style="display: none;">
+                        <li>Fondos de fomento a la innovación en gobierno</li>
+                        <li>Personas y gratificaciones vocacionadas a áreas de innovación</li>
+                        <li>Subvención/apoyo a proyectos (G2G, B2G, Innovación ciudadana)</li>
+                        <li>Reconocimiento a órganos y personas</li>
+                        <li>Nudges e insights comportamentales</li>
+                        <li>Apoyo a órganos en ejes estratégicos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dimensão 3: Normas -->
+            <div class="dimensao-item" id="normas">
+                <div class="dimensao-header">
+                    <img src="logo/dimensoes/3. Normas.svg" alt="Normas" class="dimensao-icon">
+                    <div class="dimensao-title-group">
+                        <div class="dimensao-letter n">N</div>
+                        <h3 class="dimensao-name" data-pt="Normas" data-en="Norms" data-es="Normas">Normas</h3>
+                    </div>
+                </div>
+                <p class="dimensao-description"
+                    data-pt="Normas não engessam a inovação. Quando formuladas para criar ambientes mais seguros e confiáveis, elas fortalecem a estratégia de inovação e aprimoram a gestão dos riscos inerentes à experimentação. O que precisamos não são textos legais vazios. O excesso de regras que ninguém pediu e poucos cumprem gera desconfiança. Uma regulação adaptativa e ancorada no problema real organiza, dá previsibilidade e protege a experimentação, enquanto evita a armadilha da burocracia estéril. Inovar exige coragem e é assim que regulamos para a prática e para a experimentação viva."
+                    data-en="Norms do not stifle innovation. When formulated to create safer and more reliable environments, they strengthen the innovation strategy and improve the management of risks inherent to experimentation. What we need are not empty legal texts. The excess of rules that no one asked for and few comply with generates distrust. Adaptive regulation anchored in the real problem organizes, provides predictability and protects experimentation, while avoiding the trap of sterile bureaucracy. Innovating requires courage and this is how we regulate for practice and for living experimentation."
+                    data-es="Las normas no entorpecen la innovación. Cuando se formulan para crear ambientes más seguros y confiables, fortalecen la estrategia de innovación y mejoran la gestión de los riesgos inherentes a la experimentación. Lo que necesitamos no son textos legales vacíos. El exceso de reglas que nadie pidió y pocos cumplen genera desconfianza. Una regulación adaptativa y anclada en el problema real organiza, da previsibilidad y protege la experimentación, mientras evita la trampa de la burocracia estéril. Innovar exige coraje y así es como regulamos para la práctica y para la experimentación viva.">
+                    Normas não engessam a inovação. Quando formuladas para criar ambientes mais seguros e confiáveis,
+                    elas fortalecem a estratégia de inovação e aprimoram a gestão dos riscos inerentes à experimentação.
+                    O que precisamos não são textos legais vazios. O excesso de regras que ninguém pediu e poucos
+                    cumprem gera desconfiança. Uma regulação adaptativa e ancorada no problema real organiza, dá
+                    previsibilidade e protege a experimentação, enquanto evita a armadilha da burocracia estéril. Inovar
+                    exige coragem e é assim que regulamos para a prática e para a experimentação viva.
+                </p>
+                <div class="dimensao-elements">
+                    <h4 data-pt="Elementos:" data-en="Elements:" data-es="Elementos:">Elementos:</h4>
+                    <ul data-pt>
+                        <li>Consolidação do marco conceitual da inovação</li>
+                        <li>Políticas de inovação em cada órgão e entidade</li>
+                        <li>Guias e materiais acessíveis e inclusivos</li>
+                        <li>Sandboxes para inovação</li>
+                        <li>Consolidação e regulamentação</li>
+                    </ul>
+                    <ul data-en style="display: none;">
+                        <li>Consolidation of the innovation conceptual framework</li>
+                        <li>Innovation policies in each agency and entity</li>
+                        <li>Accessible and inclusive guides and materials</li>
+                        <li>Innovation sandboxes</li>
+                        <li>Consolidation and regulation</li>
+                    </ul>
+                    <ul data-es style="display: none;">
+                        <li>Consolidación del marco conceptual de la innovación</li>
+                        <li>Políticas de innovación en cada órgano y entidad</li>
+                        <li>Guias y materiales accesibles e inclusivos</li>
+                        <li>Sandboxes para innovación</li>
+                        <li>Consolidación y regulamentación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dimensão 4: Gestão de Capacidades -->
+            <div class="dimensao-item" id="gestao">
+                <div class="dimensao-header">
+                    <img src="logo/dimensoes/4. Gestão de Capacidades.svg" alt="Gestão de Capacidades"
+                        class="dimensao-icon">
+                    <div class="dimensao-title-group">
+                        <div class="dimensao-letter g">G</div>
+                        <h3 class="dimensao-name" data-pt="Gestão de Capacidades" data-en="Capacity Management"
+                            data-es="Gestión de Capacidades">Gestão de Capacidades</h3>
+                    </div>
+                </div>
+                <p class="dimensao-description"
+                    data-pt="Mensuração e desenvolvimento contínuo de competências e práticas institucionais para reorientar a política e aprender com a experiência. Aqui, não geramos competição, nem rankings. Nos pautamos em evidências para escolhas melhores, cooperação mais forte e decisões livres de vieses."
+                    data-en="Continuous measurement and development of competencies and institutional practices to reorient policy and learn from experience. Here, we do not generate competition or rankings. We base ourselves on evidence for better choices, stronger cooperation and bias-free decisions."
+                    data-es="Medición y desarrollo continuo de competencias y prácticas institucionales para reorientar la política y aprender de la experiencia. Aquí, no generamos competencia ni rankings. Nos basamos en evidencias para mejores elecciones, cooperación más fuerte y decisiones libres de sesgos.">
+                    Mensuração e desenvolvimento contínuo de competências e práticas institucionais para reorientar a
+                    política e aprender com a experiência. Aqui, não geramos competição, nem rankings. Nos pautamos em
+                    evidências para escolhas melhores, cooperação mais forte e decisões livres de vieses.
+                </p>
+                <div class="dimensao-elements">
+                    <h4 data-pt="Elementos:" data-en="Elements:" data-es="Elementos:">Elementos:</h4>
+                    <ul data-pt>
+                        <li>Índice de Inovação no Setor Público</li>
+                        <li>Desenvolvimento de capacidades institucionais</li>
+                        <li>Gestão para a inovação</li>
+                    </ul>
+                    <ul data-en style="display: none;">
+                        <li>Public Sector Innovation Index</li>
+                        <li>Institutional capacity development</li>
+                        <li>Management for innovation</li>
+                    </ul>
+                    <ul data-es style="display: none;">
+                        <li>Índice de Innovación en el Sector Público</li>
+                        <li>Desarrollo de capacidades institucionales</li>
+                        <li>Gestión para la innovación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dimensão 5: Ambiência -->
+            <div class="dimensao-item" id="ambiencia">
+                <div class="dimensao-header">
+                    <img src="logo/dimensoes/5. Ambiência.svg" alt="Ambiência" class="dimensao-icon">
+                    <div class="dimensao-title-group">
+                        <div class="dimensao-letter a">A</div>
+                        <h3 class="dimensao-name" data-pt="Ambiência" data-en="Ambiance" data-es="Ambiente">Ambiência
+                        </h3>
+                    </div>
+                </div>
+                <p class="dimensao-description"
+                    data-pt="Espaço institucional e humano, onde a inovação é sustentada pela segurança psicológica. Uma ambiência que substitui modelos de comando e controle por ambientes livres de assédio e pautados em relações de confiança. Que rompe com velhas práticas ineficazes e abre espaço para o questionamento propositivo, para a confiança e para novos arranjos, centrados, sobretudo, no(a) cidadão(a)."
+                    data-en="Institutional and human space, where innovation is sustained by psychological safety. An ambiance that replaces command and control models with harassment-free environments based on trust relationships. That breaks with old ineffective practices and opens space for positive questioning, for trust and for new arrangements, centered, above all, on the citizen."
+                    data-es="Espacio institucional y humano, donde la innovación es sustentada por la seguridad psicológica. Un ambiente que sustituye modelos de comando y control por ambientes libres de acoso y pautados en relaciones de confianza. Que rompe con viejas prácticas ineficaces y abre espacio para el cuestionamiento propositivo, para la confianza y para nuevos arreglos, centrados, sobre todo, en el/la ciudadano(a).">
+                    Espaço institucional e humano, onde a inovação é sustentada pela segurança psicológica. Uma
+                    ambiência que substitui modelos de comando e controle por ambientes livres de assédio e pautados em
+                    relações de confiança. Que rompe com velhas práticas ineficazes e abre espaço para o questionamento
+                    propositivo, para a confiança e para novos arranjos, centrados, sobretudo, no(a) cidadão(a).
+                </p>
+                <div class="dimensao-elements">
+                    <h4 data-pt="Elementos:" data-en="Elements:" data-es="Elementos:">Elementos:</h4>
+                    <ul data-pt>
+                        <li>Promoção de Segurança psicológica</li>
+                        <li>Práticas e comportamentos de gestão para a inovação</li>
+                        <li>Mentorias para lideranças</li>
+                    </ul>
+                    <ul data-en style="display: none;">
+                        <li>Promotion of Psychological Safety</li>
+                        <li>Management practices and behaviors for innovation</li>
+                        <li>Leadership mentoring</li>
+                    </ul>
+                    <ul data-es style="display: none;">
+                        <li>Promoción de Seguridad psicológica</li>
+                        <li>Prácticas y comportamientos de gestión para la innovación</li>
+                        <li>Mentorías para liderazgos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe Section -->
+    <section id="equipe" class="equipe-section">
+        <div class="container">
+            <h2 class="section-title" data-pt="Quem Somos" data-en="Who We Are" data-es="Quiénes Somos">Quem Somos</h2>
+            <p class="section-subtitle" data-pt="Equipe DINOV/SEGES dedicada à transformação da inovação governamental"
+                data-en="DINOV/SEGES team dedicated to transforming government innovation"
+                data-es="Equipo DINOV/SEGES dedicado a la transformación de la innovación gubernamental">
+                Equipe DINOV/SEGES dedicada à transformação da inovação governamental
+            </p>
+            <!-- Roda Humana (pessoas conectadas por propósito) -->
+            <div class="roda-humana">
+                <!-- Conexões visuais entre membros (mãos dadas) -->
+                <svg class="roda-conexoes" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
+                    <!-- Arco conectando todos os membros -->
+                    <circle cx="250" cy="250" r="200" class="conexao-circulo" />
+                </svg>
+
+                <!-- Centro: Propósito compartilhado -->
+                <div class="roda-proposito">
+                    <p class="proposito-texto" data-pt="Unidos pela transformação" data-en="United for transformation"
+                        data-es="Unidos por la transformación">Unidos pela transformação</p>
+                </div>
+
+                <!-- Membros em círculo (conectados) -->
+                <div class="roda-pessoa roda-pos-1">
+                    <div class="pessoa-avatar">C</div>
+                    <div class="pessoa-info">
+                        <span class="pessoa-nome">Claudia</span>
+                        <span class="pessoa-cargo">Inovação</span>
+                    </div>
+                </div>
+
+                <div class="roda-pessoa roda-pos-2">
+                    <div class="pessoa-avatar">L</div>
+                    <div class="pessoa-info">
+                        <span class="pessoa-nome">Luana</span>
+                        <span class="pessoa-cargo">Projetos</span>
+                    </div>
+                </div>
+
+                <div class="roda-pessoa roda-pos-3">
+                    <div class="pessoa-avatar">I</div>
+                    <div class="pessoa-info">
+                        <span class="pessoa-nome">Isabela</span>
+                        <span class="pessoa-cargo">P&D</span>
+                    </div>
+                </div>
+
+                <div class="roda-pessoa roda-pos-4">
+                    <div class="pessoa-avatar">L</div>
+                    <div class="pessoa-info">
+                        <span class="pessoa-nome">Livia</span>
+                        <span class="pessoa-cargo">Estratégia</span>
+                    </div>
+                </div>
+
+                <div class="roda-pessoa roda-pos-5">
+                    <div class="pessoa-avatar">M</div>
+                    <div class="pessoa-info">
+                        <span class="pessoa-nome">Marilia</span>
+                        <span class="pessoa-cargo">Políticas</span>
+                    </div>
+                </div>
+
+                <div class="roda-pessoa roda-pos-6">
+                    <div class="pessoa-avatar">E</div>
+                    <div class="pessoa-info">
+                        <span class="pessoa-nome">Eva</span>
+                        <span class="pessoa-cargo">Capacitação</span>
+                    </div>
+                </div>
+
+                <div class="roda-pessoa roda-pos-7">
+                    <div class="pessoa-avatar">R</div>
+                    <div class="pessoa-info">
+                        <span class="pessoa-nome">Rafael</span>
+                        <span class="pessoa-cargo">Tecnologia</span>
+                    </div>
+                </div>
+
+                <div class="roda-pessoa roda-pos-8">
+                    <div class="pessoa-avatar">T</div>
+                    <div class="pessoa-info">
+                        <span class="pessoa-nome">Thiago</span>
+                        <span class="pessoa-cargo">Análise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos Section -->
+    <section id="recursos" class="recursos-section">
+        <div class="container">
+            <h2 class="section-title" data-pt="Recursos" data-en="Resources" data-es="Recursos">Recursos</h2>
+            <div class="recursos-grid">
+                <div class="recurso-card">
+                    <div class="recurso-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                        </svg>
+                    </div>
+                    <h3 data-pt="Mapa de Registros" data-en="Records Map" data-es="Mapa de Registros">Mapa de Registros
+                    </h3>
+                    <p data-pt="Explore o mapa de registros da oficina GINGA e veja como o movimento está se expandindo"
+                        data-en="Explore the GINGA workshop records map and see how the movement is expanding"
+                        data-es="Explore el mapa de registros del taller GINGA y vea cómo se está expandiendo el movimiento">
+                        Explore o mapa de registros da oficina GINGA e veja como o movimento está se expandindo
+                    </p>
+                    <a href="https://drive.google.com/file/d/1LiWVxtN4exQxag0lBdE8Hf357j-x34_K/view" target="_blank"
+                        class="btn-secondary" data-pt="Acessar Mapa" data-en="Access Map" data-es="Acceder al Mapa">
+                        Acessar Mapa
+                    </a>
+                </div>
+                <div class="recurso-card">
+                    <div class="recurso-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                            </path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 data-pt="Galeria de Fotos" data-en="Photo Gallery" data-es="Galería de Fotos">Galeria de Fotos
+                    </h3>
+                    <p data-pt="Veja os momentos marcantes da oficina GINGA através de nossa galeria de fotos"
+                        data-en="See the remarkable moments from the GINGA workshop through our photo gallery"
+                        data-es="Vea los momentos destacados del taller GINGA a través de nuestra galería de fotos">
+                        Veja os momentos marcantes da oficina GINGA através de nossa galeria de fotos
+                    </p>
+                    <a href="https://photos.google.com/share/AF1QipOG8jLuaa8rqJHs75WXpqFIuU7jOkA_H28D625weASwlD0JNnirVcfTXATVclqMfA?pli=1&key=em15eVpjSzZwYjBiVU9XLVdsSGpTRGtZVG1yb3RB"
+                        target="_blank" class="btn-secondary" data-pt="Ver Fotos" data-en="View Photos"
+                        data-es="Ver Fotos">
+                        Ver Fotos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo/dimensoes/Símbolo GINGA.svg" alt="GINGA" class="footer-symbol">
+                    <span class="footer-text">GINGA</span>
+                </div>
+                <div class="footer-info">
+                    <p data-pt="Movimento estruturante de inovação governamental brasileira"
+                        data-en="Structuring movement for Brazilian government innovation"
+                        data-es="Movimiento estructurante de innovación gubernamental brasileña">
+                        Movimento estruturante de inovação governamental brasileira
+                    </p>
+                    <p>DINOV/SEGES</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="pagina_modelo_ginga.js"></script>
+</body>
+
+</html>
