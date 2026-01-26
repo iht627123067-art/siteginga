@@ -109,10 +109,6 @@ function scrollToSection(sectionId) {
     }
 }
 
-/**
- * Destaca a dimensão selecionada com animação
- * @param {string} dimensionId - ID da dimensão
- */
 function expandDimension(dimensionId) {
     const dimension = document.getElementById(dimensionId);
     if (!dimension) return;
@@ -134,6 +130,43 @@ function expandDimension(dimensionId) {
 }
 
 /**
+ * Alterna entre visualizações de dimensões (circular vs grid)
+ * @param {string} view - 'circular' ou 'grid'
+ */
+function switchView(view) {
+    const viewCircular = document.getElementById('view-circular');
+    const viewGrid = document.getElementById('view-grid');
+    const btnCircular = document.getElementById('btn-circular');
+    const btnGrid = document.getElementById('btn-grid');
+
+    if (view === 'grid') {
+        viewCircular.style.display = 'none';
+        viewGrid.style.display = 'grid';
+        btnCircular.classList.remove('active');
+        btnGrid.classList.add('active');
+
+        // Trigger animations for grid cards
+        const cards = viewGrid.querySelectorAll('.dimensao-card-modern');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    } else {
+        viewCircular.style.display = 'flex';
+        viewGrid.style.display = 'none';
+        btnCircular.classList.add('active');
+        btnGrid.classList.remove('active');
+    }
+
+    trackEvent('Dimensions', 'Switch View', view);
+}
+
+/**
  * Animação de reveal ao scroll
  */
 function initScrollAnimations() {
@@ -152,7 +185,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Aplicar animação aos elementos
-    const animatedElements = document.querySelectorAll('.dimensao-item, .equipe-card, .recurso-card');
+    const animatedElements = document.querySelectorAll('.dimensao-item, .equipe-card, .recurso-card, .hero-info-card, .quick-nav-button, .noticia-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -519,9 +552,87 @@ document.addEventListener('keydown', (e) => {
 });
 
 /**
+ * Abre o modal de um membro da equipe
+ * @param {string} memberId - ID do membro
+ */
+function openMemberModal(memberId) {
+    const modal = document.getElementById('member-modal');
+    const nameEl = document.getElementById('modal-name');
+    const roleEl = document.getElementById('modal-role');
+    const bioEl = document.getElementById('modal-bio');
+    const photoContent = document.getElementById('modal-photo-content');
+
+    // Encontrar o card do membro para extrair dados
+    const card = document.querySelector(`.equipe-card[onclick*="'${memberId}'"]`);
+    if (!card) return;
+
+    const name = card.querySelector('.equipe-nome').textContent;
+    const role = card.querySelector('.equipe-cargo').textContent;
+
+    // Choose bio based on language
+    const bioTemplate = document.getElementById(`bio-${memberId}-${currentLanguage}`) || document.getElementById(`bio-${memberId}-pt`);
+    const bio = bioTemplate ? bioTemplate.innerHTML : "";
+
+    // LinkedIn link
+    const linkedinLink = card.querySelector('.social-link').href;
+
+    // Avatar/Foto logic
+    const imgInCard = card.querySelector('.equipe-avatar img');
+    if (imgInCard && imgInCard.src) {
+        photoContent.innerHTML = `<img src="${imgInCard.src}" alt="${name}">`;
+        photoContent.classList.remove('modal-photo-placeholder');
+    } else {
+        const avatarChar = card.querySelector('.equipe-avatar').textContent.trim();
+        photoContent.innerHTML = avatarChar;
+        photoContent.classList.add('modal-photo-placeholder');
+    }
+
+    // Injetar dados no modal
+    nameEl.textContent = name;
+    roleEl.textContent = role;
+    bioEl.innerHTML = bio + `<div class="modal-social-footer">
+        <a href="${linkedinLink}" target="_blank" class="social-link" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span style="margin-left:8px; font-weight:600;">LinkedIn</span>
+        </a>
+    </div>`;
+
+    // Ativar modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevenir scroll
+}
+
+/**
+ * Fecha o modal da equipe
+ */
+function closeMemberModal() {
+    const modal = document.getElementById('member-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restaurar scroll
+}
+
+/**
  * Expor funções globais para uso no HTML
  */
 window.changeLanguage = changeLanguage;
 window.scrollToSection = scrollToSection;
 window.toggleMobileMenu = toggleMobileMenu;
 window.expandDimension = expandDimension;
+window.switchView = switchView;
+window.openMemberModal = openMemberModal;
+window.closeMemberModal = closeMemberModal;
+
+// Fechar modal ao clicar fora do conteúdo
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('member-modal');
+    if (e.target === modal) {
+        closeMemberModal();
+    }
+});
+
+// Suporte a tecla ESC para fechar modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeMemberModal();
+    }
+});
