@@ -607,8 +607,44 @@ function openMemberModal(memberId) {
  */
 function closeMemberModal() {
     const modal = document.getElementById('member-modal');
-    modal.classList.remove('active');
-    document.body.style.overflow = ''; // Restaurar scroll
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+/**
+ * Abre o modal do Manifesto GINGA
+ */
+function openManifestoModal() {
+    const modal = document.getElementById('manifesto-modal');
+    const modalBody = document.getElementById('manifesto-modal-body');
+    const template = document.getElementById('manifesto-full-content');
+
+    if (!modal || !modalBody || !template) return;
+
+    // Injetar conteúdo do template
+    modalBody.innerHTML = template.innerHTML;
+
+    // Aplicar idiomas (se a função updateElementsWithLanguage existir)
+    if (typeof updateElementsWithLanguage === 'function') {
+        updateElementsWithLanguage(currentLanguage);
+    }
+
+    // Ativar modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Fecha o modal do manifesto
+ */
+function closeManifestoModal() {
+    const modal = document.getElementById('manifesto-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 /**
@@ -621,18 +657,27 @@ window.expandDimension = expandDimension;
 window.switchView = switchView;
 window.openMemberModal = openMemberModal;
 window.closeMemberModal = closeMemberModal;
+window.openManifestoModal = openManifestoModal;
+window.closeManifestoModal = closeManifestoModal;
 
-// Fechar modal ao clicar fora do conteúdo
+// Fechar modais ao clicar fora do conteúdo
 window.addEventListener('click', (e) => {
-    const modal = document.getElementById('member-modal');
-    if (e.target === modal) {
+    const memberModal = document.getElementById('member-modal');
+    const manifestoModal = document.getElementById('manifesto-modal');
+
+    if (e.target === memberModal) {
         closeMemberModal();
+    }
+    if (e.target === manifestoModal) {
+        closeManifestoModal();
     }
 });
 
-// Suporte a tecla ESC para fechar modal
+// Suporte a tecla ESC para fechar modais
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeMemberModal();
+        closeManifestoModal();
     }
 });
+

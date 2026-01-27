@@ -885,146 +885,236 @@ section {
     margin-right: auto;
 }
 
-/* Manifesto Section */
+/* Manifesto Section Layout */
 .manifesto-section {
     background: var(--cor-white);
+    padding: var(--spacing-xl) 0;
 }
 
-.manifesto-content {
-    display: flex;
-    justify-content: center;
+.manifesto-grid,
+.manifesto-grid-single {
+    display: grid;
+    gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
 }
 
-.manifesto-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
+.manifesto-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.manifesto-grid-single {
+    grid-template-columns: 1fr;
     max-width: 600px;
-    text-align: center;
-    transition: transform var(--transition-base);
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.manifesto-card:hover {
-    transform: translateY(-8px);
+@media (max-width: 992px) {
+    .manifesto-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.manifesto-icon {
-    margin-bottom: var(--spacing-md);
-    color: var(--cor-governanca);
+/* Modern Manifesto Card */
+.manifesto-card-modern {
+    background: var(--cor-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
-.manifesto-icon svg {
-    stroke-width: 1.5;
+.manifesto-card-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--gradient-hero);
+    opacity: 0.8;
 }
 
-.manifesto-card h3 {
+.manifesto-card-modern.text-preview {
+    cursor: pointer;
+}
+
+.manifesto-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--cor-ginga-turquesa);
+}
+
+.card-modern-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.card-tag {
+    background: rgba(78, 205, 196, 0.1);
+    color: var(--cor-ginga-turquesa);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-modern-body {
+    flex-grow: 1;
+}
+
+.card-modern-body h3 {
     font-family: var(--font-display);
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
     color: var(--cor-text-primary);
 }
 
-.manifesto-card p {
+.card-modern-body p {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--cor-text-secondary);
     margin-bottom: var(--spacing-md);
 }
 
-/* Manifesto Texto */
-.manifesto-texto {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-xl);
-    box-shadow: var(--shadow-md);
-    margin-bottom: var(--spacing-lg);
+.card-modern-footer {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.manifesto-intro {
+/* Specific for Text Preview Card */
+.btn-text-link {
+    background: none;
+    border: none;
+    color: var(--cor-ginga-turquesa);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 0;
+    font-size: 16px;
+    transition: gap var(--transition-fast);
+}
+
+.manifesto-card-modern.text-preview:hover .btn-text-link {
+    gap: 12px;
+}
+
+/* Specific for Download Card */
+.download-card .manifesto-icon-box {
+    margin-bottom: var(--spacing-md);
+    color: var(--cor-governanca);
+}
+
+.btn-primary-modern {
+    display: inline-block;
+    background: var(--gradient-hero);
+    color: var(--cor-white);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    text-align: center;
+    width: 100%;
+}
+
+.btn-primary-modern:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+/* Manifesto Modal Content Styling */
+.manifesto-modal-content {
+    padding: var(--spacing-md);
+}
+
+.manifesto-modal-content .manifesto-intro {
+    text-align: center;
     margin-bottom: var(--spacing-xl);
-    text-align: center;
 }
 
-.manifesto-intro h3 {
-    font-family: var(--font-display);
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--cor-text-primary);
-    margin-bottom: var(--spacing-md);
+.manifesto-quote.preview-quote {
+    margin: 0 0 15px 0;
+    padding: 10px 15px;
+    font-size: 0.95rem;
 }
 
-.manifesto-intro p {
-    font-size: 18px;
-    line-height: 1.8;
+.manifesto-quote {
+    background: #fdfdfd;
+    border-left: 4px solid var(--cor-ginga-turquesa);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.7;
     color: var(--cor-text-secondary);
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.manifesto-principios {
-    margin: var(--spacing-xl) 0;
-}
-
-.manifesto-principios h4 {
-    font-family: var(--font-display);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--cor-text-primary);
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
-.manifesto-principios h4::after {
+.manifesto-quote-author {
+    display: block;
+    margin-top: var(--spacing-sm);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--cor-text-primary);
+    font-size: 14px;
+}
+
+.manifesto-modal-content h3 {
+    font-size: 32px;
+    margin-bottom: var(--spacing-md);
+    color: var(--cor-text-primary);
+}
+
+.manifesto-modal-content .manifesto-principios h4 {
+    text-align: center;
+    margin: var(--spacing-xl) 0 var(--spacing-lg);
+    position: relative;
+    font-size: 24px;
+}
+
+.manifesto-modal-content .manifesto-principios h4::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 50px;
     height: 4px;
     background: var(--gradient-hero);
-    margin: var(--spacing-sm) auto 0;
+    margin: 8px auto 0;
     border-radius: 2px;
 }
 
 .principio-item {
-    background: var(--cor-white);
-    border-left: 4px solid var(--cor-governanca);
-    padding: var(--spacing-lg) var(--spacing-xl);
+    background: #f8f9fa;
+    border-left: 4px solid var(--cor-ginga-turquesa);
+    padding: var(--spacing-md);
     margin-bottom: var(--spacing-md);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    /* More straight left edge for the border */
-    transition: all var(--transition-base);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-    /* subtle depth */
-}
-
-.principio-item:hover {
-    transform: translateX(8px);
-    box-shadow: var(--shadow-md);
-    background: linear-gradient(to right, #fff, #f4faf6);
-    /* Subtle green tint */
 }
 
 .principio-item h5 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 8px;
     color: var(--cor-text-primary);
-    margin-bottom: var(--spacing-sm);
 }
 
 .principio-item p {
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.6;
     color: var(--cor-text-secondary);
-    margin: 0;
 }
 
-.manifesto-chamada {
+.manifesto-chamada-modal {
     background: var(--gradient-hero);
     color: var(--cor-white);
     padding: var(--spacing-xl);
@@ -1033,31 +1123,37 @@ section {
     margin-top: var(--spacing-xl);
 }
 
-.manifesto-chamada h4 {
-    font-family: var(--font-display);
-    font-size: 32px;
-    font-weight: 700;
+.manifesto-chamada-modal h4 {
+    font-size: 24px;
     margin-bottom: var(--spacing-md);
 }
 
-.manifesto-chamada p {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
+.manifesto-chamada-modal p {
+    font-size: 16px;
+    line-height: 1.6;
     opacity: 0.95;
+    margin-bottom: var(--spacing-md);
 }
 
 .manifesto-assinatura {
-    font-size: 18px;
-    margin-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
     padding-top: var(--spacing-md);
-    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 14px;
 }
 
-.manifesto-assinatura strong {
-    font-weight: 700;
-    font-size: 20px;
+.modal-download-footer {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
 }
+
+.modal-download-footer .btn-primary-modern {
+    width: auto;
+    min-width: 280px;
+}
+
 
 
 /* ===============================================
@@ -1428,16 +1524,15 @@ section {
 /* Grid Modernizado de Dimensões */
 .dimensoes-grid-modern {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
     margin-bottom: var(--spacing-xl);
     perspective: 1000px;
 }
 
 .dimensao-card-modern {
     background: var(--cor-white);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     text-align: center;
@@ -1515,56 +1610,144 @@ section {
     color: var(--cor-ambiencia);
 }
 
+/* Estilo de Card Icônico e Centrado (Restaurado) */
+.dimensao-card-modern {
+    background: var(--cor-white);
+    padding: var(--spacing-lg) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    position: relative;
+    transition: all var(--transition-base);
+    border: 1px solid var(--cor-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    height: 100%;
+    /* Stretch to fill row height */
+}
+
+.card-modern-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.card-modern-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-modern-letter {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
 .dimensao-card-modern h3 {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
 }
 
-.dimensao-card-modern p {
-    font-size: 14px;
+/* Subárea de Conteúdo Rico */
+.card-subarea {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+    text-align: left;
+    flex-grow: 1;
+    /* Pushes list to bottom if needed */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-description-rich {
+    font-size: 13px;
+    line-height: 1.6;
     color: var(--cor-text-secondary);
-    margin: 0;
-    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+    hyphens: auto;
 }
 
-/* Espaço central no grid */
-.dimensao-card-modern.center-logo {
-    cursor: default;
-    border: none;
-    box-shadow: none;
-    background: transparent;
-    justify-content: center;
+.card-elements-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin-top: auto;
+    /* Aligns element tags to the bottom of the card */
 }
 
-.dimensao-card-modern.center-logo:hover {
-    transform: none;
+.card-elements-list li {
+    font-size: 10px;
+    background: rgba(0, 0, 0, 0.04);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--cor-text-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.spinning-logo {
-    width: 120px;
-    height: 120px;
-    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.1));
-    animation: slow-rotate 20s linear infinite;
+/* Hover e Cores nas Etiqueta */
+.dimensao-card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
 }
 
-@keyframes slow-rotate {
-    from {
-        transform: rotate(0deg);
-    }
+.dimensao-card-modern.governanca:hover {
+    border-bottom: 4px solid var(--cor-governanca);
+}
 
-    to {
-        transform: rotate(360deg);
-    }
+.dimensao-card-modern.incentivos:hover {
+    border-bottom: 4px solid var(--cor-incentivos);
+}
+
+.dimensao-card-modern.normas:hover {
+    border-bottom: 4px solid var(--cor-normas);
+}
+
+.dimensao-card-modern.gestao:hover {
+    border-bottom: 4px solid var(--cor-gestao);
+}
+
+.dimensao-card-modern.ambiencia:hover {
+    border-bottom: 4px solid var(--cor-ambiencia);
+}
+
+.dimensao-card-modern.governanca:hover .card-elements-list li {
+    border-color: var(--cor-governanca);
+    color: var(--cor-governanca);
+}
+
+.dimensao-card-modern.incentivos:hover .card-elements-list li {
+    border-color: var(--cor-incentivos);
+    color: #b89420;
+}
+
+.dimensao-card-modern.normas:hover .card-elements-list li {
+    border-color: var(--cor-normas);
+    color: var(--cor-normas);
+}
+
+.dimensao-card-modern.gestao:hover .card-elements-list li {
+    border-color: var(--cor-gestao);
+    color: var(--cor-gestao);
+}
+
+.dimensao-card-modern.ambiencia:hover .card-elements-list li {
+    border-color: var(--cor-ambiencia);
+    color: var(--cor-ambiencia);
 }
 
 @media (max-width: 968px) {
     .dimensoes-grid-modern {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .dimensao-card-modern.center-logo {
-        display: none;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -1782,7 +1965,7 @@ section {
    =============================================== */
 .equipe-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
     margin-top: var(--spacing-xl);
 }
@@ -1922,9 +2105,52 @@ section {
     box-shadow: var(--shadow-xl);
     transform: translateY(30px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .modal-equipe.active .modal-content-equipe {
+    transform: translateY(0);
+}
+
+/* Modal Ginga (Generic/Manifesto) */
+.modal-ginga {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-ginga.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content-ginga {
+    background: var(--cor-white);
+    width: 100%;
+    max-width: 900px;
+    border-radius: var(--radius-xl);
+    position: relative;
+    padding: var(--spacing-xxl) var(--spacing-xl) var(--spacing-xl);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-ginga.active .modal-content-ginga {
     transform: translateY(0);
 }
 
@@ -2418,6 +2644,10 @@ section {
 
     .recursos-grid {
         grid-template-columns: 1fr;
+    }
+
+    .equipe-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
