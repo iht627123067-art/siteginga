@@ -515,8 +515,9 @@ function openMemberModal(memberId) {
     const bioTemplate = document.getElementById(`bio-${memberId}-${currentLanguage}`) || document.getElementById(`bio-${memberId}-pt`);
     const bio = bioTemplate ? bioTemplate.innerHTML : "";
 
-    // LinkedIn link
-    const linkedinLink = card.querySelector('.social-link').href;
+    // LinkedIn link logic
+    const socialLinkEl = card.querySelector('.social-link');
+    const linkedinLink = socialLinkEl ? socialLinkEl.href : '';
 
     // Avatar/Foto logic
     const imgInCard = card.querySelector('.equipe-avatar img');
@@ -532,12 +533,18 @@ function openMemberModal(memberId) {
     // Injetar dados no modal
     nameEl.textContent = name;
     roleEl.textContent = role;
-    bioEl.innerHTML = bio + `<div class="modal-social-footer">
+
+    let socialFooter = '';
+    if (linkedinLink) {
+        socialFooter = `<div class="modal-social-footer">
         <a href="${linkedinLink}" target="_blank" class="social-link" title="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             <span style="margin-left:8px; font-weight:600;">LinkedIn</span>
         </a>
     </div>`;
+    }
+
+    bioEl.innerHTML = bio + socialFooter;
 
     // Ativar modal
     modal.classList.add('active');
