@@ -447,63 +447,7 @@ function initTextSlider() {
     startAutoSlide();
 }
 
-/**
- * Controla visibilidade do floating mini-nav baseado na posição do hero
- */
-function initFloatNav() {
-    const hero = document.getElementById('oque-e');
-    const floatnav = document.getElementById('floatnav');
 
-    if (!hero || !floatnav) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            // Mostra o floatnav quando o hero NÃO está visível
-            if (!entry.isIntersecting) {
-                floatnav.classList.add('visible');
-            } else {
-                floatnav.classList.remove('visible');
-            }
-        });
-    }, {
-        threshold: 0.3 // Quando 30% do hero sai de vista
-    });
-
-    observer.observe(hero);
-}
-
-/**
- * ScrollSpy para destacar navegação flutuante
- */
-function initScrollSpy() {
-    const targets = ['governanca', 'incentivos', 'normas', 'gestao', 'ambiencia'];
-    const navButtons = document.querySelectorAll('.floatnav-letter');
-
-    window.addEventListener('scroll', () => {
-        let currentId = '';
-        const scrollY = window.pageYOffset;
-
-        targets.forEach(id => {
-            const section = document.getElementById(id);
-            if (section) {
-                const sectionTop = section.offsetTop - 150;
-                const sectionHeight = section.offsetHeight;
-
-                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                    currentId = id;
-                }
-            }
-        });
-
-        navButtons.forEach(btn => {
-            btn.classList.remove('active');
-            const onClick = btn.getAttribute('onclick');
-            if (currentId && onClick && onClick.includes(`'${currentId}'`)) {
-                btn.classList.add('active');
-            }
-        });
-    });
-}
 
 
 /**
@@ -523,8 +467,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initLetterLogoToggle(); // Nova funcionalidade de toggle letra/logo
     initAutoRotation();      // Rotação automática (opcional)
     initTextSlider();        // Slider de texto Hero
-    initFloatNav();          // Floating mini-nav
-    initScrollSpy();         // ScrollSpy para navegação flutuante
 
     // Log de inicialização
     console.log('🎯 GINGA - Sistema inicializado com sucesso');

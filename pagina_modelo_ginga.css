@@ -162,8 +162,7 @@ button:focus-visible {
 
     .btn-primary,
     .btn-secondary,
-    .lang-btn,
-    .floatnav-letter {
+    .lang-btn {
         border: 2px solid currentColor;
     }
 }
@@ -225,89 +224,7 @@ button:focus-visible {
     transform: scale(0.95);
 }
 
-/* Floating GINGA Mini-Nav */
-.ginga-floatnav {
-    position: fixed;
-    bottom: var(--spacing-lg);
-    right: var(--spacing-lg);
-    display: flex;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 8px 12px;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
-    z-index: 998;
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
-    transition: opacity var(--transition-base), transform var(--transition-base);
-}
 
-.ginga-floatnav.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.floatnav-letter {
-    min-width: 44px;
-    min-height: 44px;
-    /* WCAG: Minimum touch target size */
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-md);
-    border: none;
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--cor-white);
-    cursor: pointer;
-    transition: all var(--transition-bouncy);
-    box-shadow: var(--shadow-sm);
-}
-
-.floatnav-letter.g {
-    background: var(--cor-governanca);
-}
-
-.floatnav-letter.g2 {
-    background: var(--cor-gestao);
-}
-
-.floatnav-letter.i {
-    background: var(--cor-incentivos);
-    color: var(--cor-text-primary);
-}
-
-.floatnav-letter.n {
-    background: var(--cor-normas);
-}
-
-.floatnav-letter.a {
-    background: var(--cor-ambiencia);
-}
-
-.floatnav-letter:hover {
-    transform: scale(1.15);
-    box-shadow: var(--shadow-md);
-}
-
-.floatnav-letter:active {
-    transform: scale(1.0);
-}
-
-.floatnav-letter.active {
-    transform: scale(1.15);
-    box-shadow: var(--shadow-md), 0 0 0 2px var(--cor-white), 0 0 0 4px var(--cor-incentivos);
-    z-index: 10;
-}
-
-.floatnav-letter:focus-visible {
-    outline: 3px solid var(--cor-incentivos);
-    outline-offset: 2px;
-}
 
 /* Navigation */
 .main-nav {
