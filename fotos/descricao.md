@@ -13,3 +13,5 @@
 https://www.linkedin.com/in/marrceloivo
 
 - Livia: Analista de Políticas Sociais, Mestra em Saúde Pública (UFMG), com especialização em Monitoramento e Avaliação de Políticas Públicas, Políticas Informadas por Evidências e Gestão Participativa. Possui experiência na formulação e implementação de políticas públicas para povos indígenas e saúde pública, com especial interesse em políticas centradas nas pessoas e informadas por evidências.
+
+- Marilia: Chefe da Divisão de Estratégias de Inovação na Diretoria de Inovação Governamental (Dinov) do Ministério da Gestão e da Inovação em Serviços Públicos (MGI). Servidora pública desde 2014. Doutora em Psicologia Social, do Trabalho e das Organizações pela Universidade de Brasília e em Psicología de los Recursos Humanos pela Universidade de Valencia (Espanha). Graduada e Mestra em Psicologia pela Universidade de Brasília. Professora de Psicologia no Centro Universitário de Brasília (CEUB).
